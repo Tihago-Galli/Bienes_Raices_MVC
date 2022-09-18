@@ -2,6 +2,10 @@
         
         <h2>Actualizar Entrada</h2>
 
+        <h2>Hola</h2>
+      
+
+
         <?php foreach($errores as $error): ?>
           <div class="alerta error">
             <?php echo $error; ?>

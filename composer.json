@@ -1,0 +1,22 @@
+{
+    "name": "tihag/bienesraices",
+    "description": "Mejorando sitio web",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tihago"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.6",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
+        }
+    }
+}

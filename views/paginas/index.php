@@ -18,7 +18,7 @@
 
         <h3>Envianos un Mail y contactanos!</h3>
         <p>Lorem ipsdebitis harum? Sequi corrupti aperiam nobis ducimus unde. Alias, architecto sit?</p>
-        <a href="/contacto" class="boton-amarillo-block">Contacto</a>
+        <a href="/contacto" class="boton-violeta-block">Contacto</a>
     </section>
 
 <div class="contenedor seccion seccion-inferior">

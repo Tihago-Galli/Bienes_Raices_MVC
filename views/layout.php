@@ -39,6 +39,7 @@
                         <a href="/contacto">Contacto</a>
                     <!--Si el usuario esta autenticado aparece esta opcion para cerrar sesion-->
                         <?php if($auth): ?>
+                            <a href="/admin">Administracion</a>
                             <a href="/logout">Cerrar Sesión</a>
                         <?php endif; ?>
                     </nav>

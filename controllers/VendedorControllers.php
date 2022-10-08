@@ -38,13 +38,13 @@ class VendedorControllers{
             
               //generar nombre unico a la imagen
               $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-            
+              $url = CARPETA_VENDEDORES;
             
                         //subida de imagen
                         //realiza un resize a la imagen con intervention
                         if($_FILES['vendedor']['tmp_name']['imagen']){
                         $imagen = Imagen::make($_FILES['vendedor']['tmp_name']['imagen'])->fit(800,600);
-                        $vendedor->setImagen($nombreImagen);
+                        $vendedor->setImagen($nombreImagen, $url);
                         }
                     //validar 
                     $errores = $vendedor->validar();
@@ -143,9 +143,9 @@ $router->render('/vendedores/actualizar',[
    
         //validamos de que el tipo ingresado sea correcto y no uno modificado
         if(validarTipo($tipo)){
-           
+          
             $vendedor = Vendedor::find($id);
-                $vendedor ->eliminar();
+                $vendedor ->eliminar($tipo);
         }
         
 

@@ -145,33 +145,32 @@ public function setImagen($imagen){
 public function borrarImagen(){
 //comprobar si la imagen existe
 
-    if(static::$tabla === "vendedores"){
-        $existeImagen = file_exists(CARPETA_VENDEDORES . $this->imagen);
-       
-        if($existeImagen){
-            //BORRAR LA IMAGEN QUE SE ENCUENTRE EN ESA CARPETA
+    if(static::$tabla === 'vendedores'){
+        $existeArchivo = file_exists(CARPETA_VENDEDORES . $this->imagen);
+
+        if($existeArchivo){
             unlink(CARPETA_VENDEDORES . $this->imagen);
+        }
+
     }
 
-        
-    }
-    elseif(static::$tabla === "propiedades"){
-        $existeImagen = file_exists(CARPETA_IMAGENES . $this->imagen);
+    if(static::$tabla === 'propiedades'){
+        $existeArchivo = file_exists(CARPETA_IMAGENES . $this->imagen);
 
-
-
-        if($existeImagen){
-                //BORRAR LA IMAGEN QUE SE ENCUENTRE EN ESA CARPETA
+        if($existeArchivo){
             unlink(CARPETA_IMAGENES . $this->imagen);
         }
-    }elseif(static::$tabla === "entrada"){
-        $existeImagen = file_exists(CARPETA_BLOG . $this->imagen);
+      
+    }
 
-        if($existeImagen){
-                //BORRAR LA IMAGEN QUE SE ENCUENTRE EN ESA CARPETA
+    if(static::$tabla === 'entrada'){
+        $existeArchivo = file_exists(CARPETA_BLOG . $this->imagen);
+
+        if($existeArchivo){
             unlink(CARPETA_BLOG . $this->imagen);
         }
-    }
+        
+    }  
     
 }
 

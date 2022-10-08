@@ -25,7 +25,7 @@ describe('Probando el homepage', () => {
         cy.get("[data-cy='anuncio']").should('not.have.length', 5); 
 
         
-        cy.get("[data-cy='anuncio-boton']").should('have.class', 'boton-amarillo'); 
+        cy.get("[data-cy='anuncio-boton']").should('have.class', 'boton-violeta'); 
     
         cy.get("[data-cy='anuncio-boton']").first().invoke('text').should('equal', 'Ver Anuncio');
     

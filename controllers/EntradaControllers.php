@@ -51,12 +51,12 @@ class EntradaControllers{
                   //generar nombre unico a la imagen
                   $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
                 
-                
+                $url = CARPETA_BLOG;
                             //subida de imagen
                             //realiza un resize a la imagen con intervention
                             if($_FILES['entrada']['tmp_name']['imagen']){
                             $imagen = Imagen::make($_FILES['entrada']['tmp_name']['imagen'])->fit(800,600);
-                            $entrada->setImagen($nombreImagen);
+                            $entrada->setImagen($nombreImagen, $url);
                             }
                         //validar 
                         $errores = $entrada->validar();
@@ -154,9 +154,11 @@ class EntradaControllers{
        
             //validamos de que el tipo ingresado sea correcto y no uno modificado
             if(validarTipo($tipo)){
+
+                $url = CARPETA_BLOG;
                
                 $entrada = Entrada::find($id);
-                    $entrada ->eliminar();
+                    $entrada ->eliminar($url);
             }
             
     

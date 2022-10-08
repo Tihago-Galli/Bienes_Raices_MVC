@@ -2,7 +2,7 @@
         
         <h2>Actualizar Entrada</h2>
 
-        <h2>Hola</h2>
+   
       
 
 

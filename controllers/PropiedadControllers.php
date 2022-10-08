@@ -18,7 +18,7 @@ class PropiedadControllers{
         $entradas = Entrada::all();
         $resultado = $_GET['resultado'] ?? null;
 
-        $router->render('propiedades/admin', [
+        $router->render('admin/admin', [
             //pasamos toda la informacion a la vista
             'propiedades' => $propiedades,
             'entradas' => $entradas,
@@ -49,6 +49,7 @@ class PropiedadControllers{
                   mkdir(CARPETA_IMAGENES);
               }
             
+              $url = CARPETA_IMAGENES;
               //generar nombre unico a la imagen
               $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
             
@@ -57,7 +58,7 @@ class PropiedadControllers{
                         //realiza un resize a la imagen con intervention
                         if($_FILES['propiedad']['tmp_name']['imagen']){
                         $imagen = Imagen::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
-                        $propiedad->setImagen($nombreImagen);
+                        $propiedad->setImagen($nombreImagen, $url);
                         }
                     //validar 
                     $errores = $propiedad->validar();
@@ -111,6 +112,7 @@ class PropiedadControllers{
              //generar nombre unico a la imagen
             $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
         
+       
           
            if($_FILES['propiedad']['tmp_name']['imagen']){
             $imagen = Imagen::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
@@ -155,9 +157,9 @@ class PropiedadControllers{
    
         //validamos de que el tipo ingresado sea correcto y no uno modificado
         if(validarTipo($tipo)){
-           
+          
             $propiedad = Propiedad::find($id);
-                $propiedad ->eliminar();
+                $propiedad ->eliminar($tipo);
         }
         
 

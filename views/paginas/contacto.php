@@ -60,6 +60,6 @@
            
             
         </fieldset>
-        <input type="submit" value="enviar" class="boton-verde">
+        <input type="submit" value="enviar" class="boton-verde-block">
     </form>
     </main>
